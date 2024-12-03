@@ -1,0 +1,40 @@
+@model baitapupload.Models.Book
+
+@{
+    ViewData["Title"] = "Create New Book";
+}
+
+<h2>Create New Book</h2>
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="Title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" id="Title" name="Title" class="form-control" value="@Model?.Title" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Author" class="col-sm-2 control-label">Author</label>
+        <div class="col-sm-10">
+            <input type="text" id="Author" name="Author" class="form-control" value="@Model?.Author" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Year" class="col-sm-2 control-label">Year</label>
+        <div class="col-sm-10">
+            <input type="number" id="Year" name="Year" class="form-control" value="@Model?.Year" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Genre" class="col-sm-2 control-label">Genre</label>
+        <div class="col-sm-10">
+            <input type="text" id="Genre" name="Genre" class="form-control" value="@Model?.Genre" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Create</button>
+            <a href="@Url.Action("Index", "Book")" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</form>

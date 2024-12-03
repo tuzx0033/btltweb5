@@ -1,0 +1,30 @@
+@model baitapupload.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<h2>Book Details</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <td>@Model.Title</td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>@Model.Author</td>
+        </tr>
+        <tr>
+            <th>Year</th>
+            <td>@Model.Year</td>
+        </tr>
+        <tr>
+            <th>Genre</th>
+            <td>@Model.Genre</td>
+        </tr>
+    </table>
+</div>
+
+<a href="@Url.Action("Index", "Book")" class="btn btn-primary">Back to List</a>

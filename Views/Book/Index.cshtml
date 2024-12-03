@@ -1,0 +1,37 @@
+@model IEnumerable<baitapupload.Models.Book>
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+<h2>Books List</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Year</td>
+            <td>@book.Genre</td>
+            <td>
+                <a href="@Url.Action("Details", "Book", new { id = book.Id })" class="btn btn-info btn-sm">Details</a>
+                <a href="@Url.Action("Edit", "Book", new { id = book.Id })" class="btn btn-warning btn-sm">Edit</a>
+                <a href="@Url.Action("Delete", "Book", new { id = book.Id })" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Book")" class="btn btn-primary">Create New Book</a>
